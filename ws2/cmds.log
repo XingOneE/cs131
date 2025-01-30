@@ -1,0 +1,41 @@
+====================================
+Doing Task Command
+====================================
+   36  mkdir -p ~/cs131/ws2
+   37  id
+   38  cd cs131/ws2
+   39  pwd
+   40  id
+   41  ls
+   42  grap mem
+   43  ls /procc/ | grep mem 
+   44  ls /proc/ | grep mem/ 
+   46  ls /proc/ | grep cpu
+   47  ls /proc | grep -E "mem|cpu"
+   48  head -n 10/pro/meminfoo
+   51  head /proc/meminfo
+   56  head /proc/meminfo
+   57  head /proc/cpuinfo
+   58  tail /proc/cpuinfo
+   59  cat /proc/cpuinfo
+   60  cat /etc/os
+   61  cat /etc/os-release
+   62  ls /proc | grep -E "mem|cpu"
+====================================
+Creating for ws2.txt
+====================================
+   63  echo "Task 2: Home Directory Path" > ws2.txt
+   64  echo $HOME >> ws2.txt
+   65  echo "Task 3: UID and Groups" >> ws2.txt
+   66  id >> ws2.txt
+   67  echo "Task 4: Memory and CPU Info Files in /proc" >> ws2.txt
+   68  ls /proc/ | grep mem >> ws2.txt
+   69  ls /proc/ | grep cpu >> ws2.txt
+   70  echo "Task 5: Memory Info" >> ws2.txt
+   71  head -n 10 /proc/meminfo >> ws2.txt
+   72  echo "Task 6: CPU Info" >> ws2.txt
+   73  head -n 10 /proc/cpuinfo >> ws2.txt
+   74  echo "Task 7: OS Version" >> ws2.txt
+   75  cat /etc/os-release >> ws2.txt
+   76  vim ws2.txt
+   77  history > cmds.log

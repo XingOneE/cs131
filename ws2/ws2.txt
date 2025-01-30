@@ -1,0 +1,49 @@
+====================================
+Task 2: Home Directory Path
+/home/xingyu_luo
+====================================
+Task 3: UID and Groups
+uid=1001(xingyu_luo) gid=1002(xingyu_luo) groups=1002(xingyu_luo),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd),1000(ubuntu),1001(google-sudoers)
+====================================
+Task 4: Memory and CPU Info Files in /proc
+iomem
+meminfo
+cpuinfo
+====================================
+Task 5: Memory Info
+MemTotal:         976904 kB
+MemFree:          468872 kB
+MemAvailable:     623540 kB
+Buffers:           13516 kB
+Cached:           251704 kB
+SwapCached:            0 kB
+Active:           138416 kB
+Inactive:         186568 kB
+Active(anon):        884 kB
+Inactive(anon):    68064 kB
+=====================================
+Task 6: CPU Info
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2199.998
+cache size	: 56320 KB
+physical id	: 0
+====================================
+Task 7: OS Version
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
