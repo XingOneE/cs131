@@ -22,7 +22,7 @@ Doing Task Command
    61  cat /etc/os-release
    62  ls /proc | grep -E "mem|cpu"
 ====================================
-Creating for ws2.txt
+Creating for ws2.txt and cmds.log
 ====================================
    63  echo "Task 2: Home Directory Path" > ws2.txt
    64  echo $HOME >> ws2.txt
