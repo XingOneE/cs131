@@ -1,0 +1,73 @@
+==========================================
+Task 1: Setting Aliases
+==========================================
+Alias 'l' output:
+
+total 439628
+-rw-rw-r-- 1 xingyu_luo xingyu_luo 450156048 Jan 19 07:24 2019-01-h1.csv
+drwxrwxr-x 2 xingyu_luo xingyu_luo      4096 Feb 11 18:48 FARE
+-rw-rw-r-- 1 xingyu_luo xingyu_luo      7292 Feb 11 18:58 cmds.log
+-rw-rw-r-- 1 xingyu_luo xingyu_luo        18 Feb 11 18:59 a1.txt
+
+Alias 'w' output:
+
+4
+==========================================
+Task 2a: Creating FARE Directory & Extracting Taxi Data
+==========================================
+Fare Data for 48.0 → 161.0 (First 10 rows):
+
+8.5
+10.0
+14.0
+14.0
+12.5
+9.5
+15.0
+7.5
+8.5
+13.0
+
+Fare Data for 132.0 → 186.0 (First 10 rows):
+
+52.0
+52.0
+52.0
+52.0
+52.0
+52.0
+52.0
+52.0
+52.0
+52.0
+==========================================
+Task 2c: Computing Average Fare Amount
+==========================================
+Average Fare for 48.0 → 161.0:
+
+7.07792
+
+Average Fare for 132.0 → 186.0:
+
+52.0303
+==========================================
+Task 2d: Highest Total Amount Paid on January 10, 2019
+==========================================
+Highest Total Amount Paid on January 10, 2019:
+
+36090.3
+==========================================
+Task 2e: Top 10 Dropoff Locations for Rides with 3+ Passengers
+==========================================
+Top 10 Dropoff Locations for Rides with 3+ Passengers:
+
+  19897 236.0
+  18013 161.0
+  16686 237.0
+  16556 230.0
+  14324 170.0
+  13964 48.0
+  13902 162.0
+  13472 142.0
+  12852 239.0
+  12194 141.0

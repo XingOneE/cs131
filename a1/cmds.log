@@ -1,0 +1,69 @@
+ Navigate into the cs131 directory and create `a1` folder  
+  203  cd 131
+  204  cd cs131
+  205  mkdir a1
+  206  cd a1
+
+Set up alias commands in `.bashrc`
+  207  echo "alias l='ls -ltr'" >> ~/.bashrc
+  208  echo "alias w='ls -l | wc'" >> ~/.bashrc
+  209  source ~/.bashrc
+  210  l
+  211  w
+
+Create `FARE` directory for storing fare data and donnload the taxi dattaset
+  221  mkdor FARE
+  222  mkdir FARE
+  223  /home/xingyu_luo/.local/bin/gdown 1fc3saVu2GtG3Rft3zI-VOOsZhaqcSyn3
+
+Extract fare data for selected pickup-dropoff pairs
+  224  ls
+  225  grep ',48.0,161.0,' ~/cs131/a1/2019-01-h1.csv > FARE/48.0-161.0.txt
+  226  grep ',132.0,186.0,' ~/cs131/a1/2019-01-h1.csv > FARE/132.0-186.0.txt
+  227  echo "Fare data for 48.0 → 161.0:" >> a1.txt
+  228  cat FARE/48.0-161.0.txt >> a1.txt
+  229  echo "Fare data for 132.0 → 186.0:" >> a1.txt
+  230  cat FARE/132.0-186.0.txt >> a1.txt
+
+Extract fare amounts (column 11) for analysis
+  231  cut -d',' -f11 FARE/48.0-161.0.txt > FARE/48.0-161.0_fares.txt
+  232  cut -d',' -f11 FARE/132.0-186.0.txt > FARE/132.0-186.0_fares.txt
+  233  head FARE/48.0-161.0_fares.txt
+  234  head FARE/132.0-186.0_fares.txt
+
+Compute the average fare for each pair using `awk` and `bc`
+  235  awk '{sum+=$1} END {print sum/NR}' FARE/48.0-161.0_fares.txt | bc > FARE/48.0-161.0_avg.txt
+  236  awk '{sum+=$1} END {print sum/NR}' FARE/132.0-186.0_fares.txt | bc > FARE/132.0-186.0_avg.txt
+  237  echo "Average fare for 48.0 → 161.0:" >> a1.txt
+  238  cat FARE/48.0-161.0_avg.txt >> a1.txt
+  239  echo "Average fare for 132.0 → 186.0:" >> a1.txt
+  240  cat FARE/132.0-186.0_avg.txt >> a1.txt
+
+Find the highest total fare paid on January 10, 2019
+  241  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1
+  242  echo "Highest total amount paid on January 10, 2019:" >> a1.txt
+  243  grep '"2019-01-10' ~/cs131/ws3/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1 >> a1.txt
+  244  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1 >> a1.txt
+
+Identify the top 10 most common dropoff locations for rides with 3+ passengers
+  245  awk -F',' '$4>=3 {print $9}' ~/cs131/a1/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10
+  246  echo "Top 10 Dropoff Locations for Rides with 3+ Passengers:" >> a1.txt
+  247  awk -F',' '$4>=3 {print $9}' ~/cs131/ws3/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10 >> a1.txt
+  248  awk -F',' '$4>=3 {print $9}' ~/cs131/a1/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10 >> a1.txt
+  249  history > cmds.log
+
+Verify alias outputs and append them to `a1.txt`
+  250  echo "Alias 'l' output:" > a1.txt
+  251  l >> a1.txt
+  252  echo "Alias 'w' output:" >> a1.txt
+  253  w >> a1.txt
+  254  vim a1.txt
+
+Correct `w` alias to exclude `total` from `ls -l` output
+  271  echo "alias w='ls -l | grep -v total | wc -l'" >> ~/.bashrc
+  272  source ~/.bashrc
+  273  w
+  274  vim a1.txt
+  275  ls
+  276  history > cmds.log
+
