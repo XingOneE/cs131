@@ -31,33 +31,35 @@ Extract fare amounts (column 11) for analysis
   233  head FARE/48.0-161.0_fares.txt
   234  head FARE/132.0-186.0_fares.txt
 
-Compute the average fare for each pair using `awk` and `bc`
-  235  awk '{sum+=$1} END {print sum/NR}' FARE/48.0-161.0_fares.txt | bc > FARE/48.0-161.0_avg.txt
-  236  awk '{sum+=$1} END {print sum/NR}' FARE/132.0-186.0_fares.txt | bc > FARE/132.0-186.0_avg.txt
-  237  echo "Average fare for 48.0 → 161.0:" >> a1.txt
-  238  cat FARE/48.0-161.0_avg.txt >> a1.txt
-  239  echo "Average fare for 132.0 → 186.0:" >> a1.txt
-  240  cat FARE/132.0-186.0_avg.txt >> a1.txt
+Compute the average fare for each pair
+  235  sum=$(paste -sd+ FARE/48.0-161.0_fares.txt | bc) 
+  236  count=$(wc -l < FARE/48.0-161.0_fares.txt)
+  237  average=$(echo "$sum / $count" | bc -l)
+  238  echo "Average Fare for 132.0 → 186.0: $average" >> a1.txt
+ 
+  239  sum=$(paste -sd+ FARE/132.0-186.0_fares.txt | bc)
+  240  count=$(wc -l < FARE/132.0-186.0_fares.txt)
+  241  average=$(echo "$sum / $count" | bc -l) 
+  242  echo "Average Fare for 132.0 → 186.0: $average" >> a1.txt
+ 
 
 Find the highest total fare paid on January 10, 2019
-  241  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1
-  242  echo "Highest total amount paid on January 10, 2019:" >> a1.txt
-  243  grep '"2019-01-10' ~/cs131/ws3/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1 >> a1.txt
-  244  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1 >> a1.txt
+  243  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1
+  244  echo "Highest total amount paid on January 10, 2019:" >> a1.txt
+  246  grep '"2019-01-10' ~/cs131/a1/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1 >> a1.txt
 
 Identify the top 10 most common dropoff locations for rides with 3+ passengers
-  245  awk -F',' '$4>=3 {print $9}' ~/cs131/a1/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10
-  246  echo "Top 10 Dropoff Locations for Rides with 3+ Passengers:" >> a1.txt
-  247  awk -F',' '$4>=3 {print $9}' ~/cs131/ws3/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10 >> a1.txt
-  248  awk -F',' '$4>=3 {print $9}' ~/cs131/a1/2019-01-h1.csv | sort | uniq -c | sort -nr | head -n 10 >> a1.txt
-  249  history > cmds.log
+  247  grep -E '^([^,]*,){3}[3-9]\.0,' 2019-01-h1.csv | cut -d',' -f9 | sort | uniq -c | sort -nr | head -n 10
+  248  echo "Top 10 Dropoff Locations for Rides with 3+ Passengers:" >> a1.txt
+  249  grep -E '^([^,]*,){3}[3-9]\.0,' 2019-01-h1.csv | cut -d',' -f9 | sort | uniq -c | sort -nr | head -n 10 >> a1.txt
+  250  history > cmds.log
 
 Verify alias outputs and append them to `a1.txt`
-  250  echo "Alias 'l' output:" > a1.txt
-  251  l >> a1.txt
-  252  echo "Alias 'w' output:" >> a1.txt
-  253  w >> a1.txt
-  254  vim a1.txt
+  251  echo "Alias 'l' output:" > a1.txt
+  252  l >> a1.txt
+  253  echo "Alias 'w' output:" >> a1.txt
+  254  w >> a1.txt
+  255  vim a1.txt
 
 Correct `w` alias to exclude `total` from `ls -l` output
   271  echo "alias w='ls -l | grep -v total | wc -l'" >> ~/.bashrc
