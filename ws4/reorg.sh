@@ -31,7 +31,7 @@ done
 
 # Save `wc` results into ws4.txt
 echo "Word count results for vendor-separated files:" > ws4.txt
-wc -l ${timestamp}-*.csv >> ws4.txt
+wc ${timestamp}-*.csv >> ws4.txt
 
 # Append .gitignore contents to ws4.txt
 echo -e "\nContents of .gitignore:" >> ws4.txt
