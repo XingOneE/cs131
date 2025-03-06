@@ -46,7 +46,7 @@ organize
 
 ## Output:
 
-Usage: organize '<directory>'
+Usage: organize /directory
 
 ## You must specify a directory to organize.
 
@@ -63,10 +63,9 @@ Error: Directory '/nonexistent' not found!
 If organize is not found, install it:
 
 sudo mv organize.sh /usr/local/bin/organize
-
 sudo chmod +x /usr/local/bin/organize
 
 Now, simply run:
 
-organize '<directory>'
+organize ~/directory
 
