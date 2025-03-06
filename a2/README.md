@@ -11,7 +11,7 @@ based on file types like Documents, Images, Videos, Music, Archives, and Scripts
 - **Saves time** compared to manually moving files.
 
 ## How you can use this command
-### **1️⃣ Organize your `test1` folder**
+### ** Organize your `test1` folder**
 
 organize ~/cs131/test1
 
@@ -37,4 +37,37 @@ To:
 │── Music/
 │── Scripts/
 │── Videos/
+
+# Error Handling
+
+If No Directory Is Specified
+
+organize
+
+# Output:
+
+Usage: organize <directory>
+
+# You must specify a directory to organize.
+
+If the Directory Does Not Exist
+
+organize /nonexistent
+
+# Output:
+
+Error: Directory '/nonexistent' not found!
+
+# Make sure the directory exists before running the command.
+
+# Installation
+
+If organize is not found, install it:
+
+sudo mv organize.sh /usr/local/bin/organize
+sudo chmod +x /usr/local/bin/organize
+
+Now, simply run:
+
+organize <directory>
 
