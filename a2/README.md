@@ -38,36 +38,35 @@ To:
 │── Scripts/
 │── Videos/
 
-# Error Handling
+## Error Handling
 
 If No Directory Is Specified
 
 organize
 
-# Output:
+## Output:
 
-Usage: organize <directory>
+Usage: organize '<directory>'
 
-# You must specify a directory to organize.
+## You must specify a directory to organize.
 
 If the Directory Does Not Exist
 
 organize /nonexistent
 
-# Output:
+## Output:
 
 Error: Directory '/nonexistent' not found!
 
-# Make sure the directory exists before running the command.
-
-# Installation
+## Installation
 
 If organize is not found, install it:
 
 sudo mv organize.sh /usr/local/bin/organize
+
 sudo chmod +x /usr/local/bin/organize
 
 Now, simply run:
 
-organize <directory>
+organize '<directory>'
 
