@@ -1,0 +1,34 @@
+Task 1 sed:
+  674  sed -n '/^2.0,/p' 2019-01-h1.csv > vendor2.csv
+  675  sed 's/[:"-]//g' 2019-01-h1.csv > no-separators.csv
+  676  sed 's/\.[0-9]*//g' no-separators.csv > no-fractions.csv
+  677  wc vendor2.csv
+  678  head -10 no-separators.csv
+  679  head -10 no-fractions.csv
+  680  wc vendor2.csv > ws56.txt
+  681  echo "" >> ws56.txt
+  682  head -10 no-separators.csv >> ws56.txt
+  683  echo "" >> ws56.txt
+  684  head -10 no-fractions.csv >> ws56.txt
+  685  history > cmnd.log
+
+
+Task 2 awk:
+  697  awk -F',' '$17 >= 10 {print $14}' no-fractions.csv | sort | uniq -c | awk '{print $2, $1}' > results.txt
+  698  head results.txt
+  701  sort -nr -k2 results.txt | head -20
+  702  sort -nr -k2 results.txt | head -20 >> ws56.txt
+  705  cat ws56.txt
+
+Organize ws56.txt:
+  727  rm ws56.txt
+  728  wc vendor2.csv >> ws56.txt
+  730  head -10 no-separators.csv >> ws56.txt
+  732  head -10 no-fractions.csv >> ws56.txt
+  734  awk -F',' '$17 >= 10 {print $14}' no-fractions.csv | sort | uniq -c | awk '{print $2, $1}' >> ws56.txt
+  737  cat ws56.txt
+  738  sort -nr -k2 results.txt | head -20 >> ws56.txt
+  739  vim ws56.txt
+  740  cat ws56.txt
+  741  vim ws56.txt
+  742  history >> cmnd.log
