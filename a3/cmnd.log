@@ -1,0 +1,15 @@
+  645  cd ~/cs131
+  646  mkdir a3
+  647  cd a3
+  648  touch grades.csv
+  649  vim grades.csv
+  650  cat grades.csv
+  651  touch grader.awk
+  652  vim grader.awk
+  653  cat grader.awk
+  654  awk -f grader.awk grades.csv
+  655  vim grader.awk
+  666  awk -f grader.awk grades.csv
+  667  awk -f grader.awk grades.csv > a3.txt
+  668  cat a3.txt
+  669  history > cmnd.log

@@ -1,0 +1,30 @@
+=== Student Grade Report ===
+
+Name: Alice
+Total of Grades: 253
+Average: 84.3333
+Result: PASSED
+
+Name: Bob
+Total of Grades: 246
+Average: 82
+Result: PASSED
+
+Name: Charlie
+Total of Grades: 270
+Average: 90
+Result: PASSED
+
+Name: David
+Total of Grades: 195
+Average: 65
+Result: FAILED
+
+Name: Eve
+Total of Grades: 265
+Average: 88.3333
+Result: PASSED
+
+=== Summary ===
+Highest Scorer: Charlie with 270 points
+Lowest Scorer: David with 195 points
