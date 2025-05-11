@@ -1,0 +1,3 @@
+head game_sales.csv
+awk -F',' '$7 != ""' vgchartz-2024.csv > cleaned_game_sales.csv
+cut -d',' -f2,3,4,7,8,9 vgchartz-2024.csv > selected_game_sales.csv
